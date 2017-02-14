@@ -1,0 +1,29 @@
+BASH_NEWLINE="\n"
+BASH_WHITE="\[\e[1;0m\]"
+BASH_GRAY="\[\e[1;30m\]"
+BASH_LIGHT_GREEN="\[\e[1;32m\]"
+BASH_LIGHT_GRAY="\[\e[0;37m\]"
+BASH_YELLOW="\[\e[1;33m\]"
+BASH_CYAN="\[\e[1;36m\]"
+
+function parse_git_branch {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
+    echo "("${ref#refs/heads/}") ";
+}
+
+
+PS1="\u@${BASH_LIGHT_GREEN}\h${BASH_WHITE} [${BASH_CYAN}\w${BASH_WHITE}] ${BASH_YELLOW}\$(parse_git_branch)${BASH_WHITE}";
+
+export LC_ALL=zh_TW.UTF-8
+export LANG=zh_TW.UTF-8
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYTHONPATH="$HOME/bin"
+eval "$(pyenv init -)"
+source ~/.bashrc
+source ~/.pyenv/completions/pyenv.bash
+
+# POWERLINE_PATH=/.amd_mnt/account/users/phoebejeng/.pyenv/versions/2.7.5/lib/python2.7/site-packages/Powerline-beta-py2.7.egg/powerline/bindings/bash/powerline.sh
+# if [ -f $POWERLINE_PATH ]; then
+#     source $POWERLINE_PATH
+# fi
