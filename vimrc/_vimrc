@@ -1,0 +1,63 @@
+set number
+
+set hlsearch
+set incsearch
+
+set ruler
+set showmode
+syntax on
+
+set nocompatible " Powerline need.
+
+set t_Co=256
+
+set encoding=utf-8 " Necessary to show Unicode glyphs
+set fileencoding=utf-8
+set fileencodings=utf-8,big5,gb2312,sjis
+
+set modeline
+set background=dark
+set backspace=indent,eol,start
+
+filetype off
+filetype plugin indent on
+
+set confirm
+set history=100
+set laststatus=2 "Powerline need.
+set statusline=%4*%<\%m%<[%f\%r%h%w]\ [%{&ff},%{&fileencoding},%Y]%=\[Position=%l,%v,%p%%]
+let g:Powerline_symbols = "unicode"
+
+
+set expandtab
+set autoindent
+set tabstop=4
+set shiftwidth=4
+
+set tabpagemax=100
+
+map <C-n> :tabnext <CR>
+map <C-p> :tabp <CR>
+nmap <C-t> :tabnew . <CR>
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'Lokaltog/vim-powerline'
+
+Bundle 'Shutnik/jshint2.vim'
+
+Bundle 'wincent/Command-T'
+
+"set cursorline
+"highlight CursorLine term=bold cterm=NONE ctermbg=darkyellow guibg=darkred guifg=white
+"highlight CursorColumn cterm=NONE ctermbg=white ctermfg=white guibg=darkred guifg=white
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
