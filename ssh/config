@@ -1,0 +1,4 @@
+Host gitlab
+    HostName gitlab.kkcorp
+    User git
+    IdentityFile ~/.ssh/id_rsa
