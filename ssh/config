@@ -1,4 +1,4 @@
-Host gitlab
-    HostName gitlab.kkcorp
-    User git
-    IdentityFile ~/.ssh/id_rsa
+Host gitlab.kkinternal.com
+    Preferredauthentications publickey
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/gitlab

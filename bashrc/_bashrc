@@ -16,4 +16,15 @@ alias fxml="tidy -utf8 -xml -w 255 -i -c -q -asxml"
 alias vi="vim -p"
 alias showcpuinfo="sysctl -a | egrep -i 'hw.machine|hw.model|hw.ncpu'"
 alias shownetinfo="gstat"
-alias composer="php -d allow_url/fopen=1 ~/codes/composer/bin/composer"
+
+if [ -f '/home/phoebejeng/code/composer/composer.phar' ]; then
+    alias composer="/home/phoebejeng/code/composer/composer.phar"
+else
+    echo 'Cannot found /home/phoebejeng/code/composer/composer.phar'
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/phoebejeng/code/google-cloud-sdk/path.bash.inc' ]; then . '/home/phoebejeng/code/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/phoebejeng/code/google-cloud-sdk/completion.bash.inc' ]; then . '/home/phoebejeng/code/google-cloud-sdk/completion.bash.inc'; fi

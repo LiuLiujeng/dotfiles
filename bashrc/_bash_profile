@@ -16,12 +16,9 @@ PS1="\u@${BASH_LIGHT_GREEN}\h${BASH_WHITE} [${BASH_CYAN}\w${BASH_WHITE}] ${BASH_
 
 export LC_ALL=zh_TW.UTF-8
 export LANG=zh_TW.UTF-8
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PYTHONPATH="$HOME/bin"
-eval "$(pyenv init -)"
+
+export PATH="/home/phoebejeng/code/google-cloud-sdk/bin:/home/phoebejeng/bin:$PATH"
 source ~/.bashrc
-source ~/.pyenv/completions/pyenv.bash
 
 # POWERLINE_PATH=/.amd_mnt/account/users/phoebejeng/.pyenv/versions/2.7.5/lib/python2.7/site-packages/Powerline-beta-py2.7.egg/powerline/bindings/bash/powerline.sh
 # if [ -f $POWERLINE_PATH ]; then
